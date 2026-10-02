@@ -1,0 +1,12 @@
+2026-10-02T18:30:59Z start; ventunoq
+2026-10-02T18:33:08Z gemma-4-E2B_q4_0-it.gguf 3349514112 bytes sha256 3646b4c147cd235a44d91df1546d3b7d8e29b547dbe4e1f80856419aa455e6fd
+2026-10-02T18:33:08Z == gemma-4-E2B_q4_0-it.gguf NPU (HTP0, all layers, 4 threads on cpu0-3)
+2026-10-02T18:33:39Z NPU exit=0 pp 565.56±1.32 / tg 17.07±0.54
+2026-10-02T18:33:39Z == gemma-4-E2B_q4_0-it.gguf CPU (dotprod build, 4 threads on cpu0-3)
+2026-10-02T18:34:44Z CPU exit=0 pp 58.76±0.70 / tg 14.16±0.04
+2026-10-02T18:37:50Z gemma-4-E4B_q4_0-it.gguf 5154939136 bytes sha256 e8b6a059ba86947a44ace84d6e5679795bc41862c25c30513142588f0e9dba1d
+2026-10-02T18:37:50Z == gemma-4-E4B_q4_0-it.gguf NPU (HTP0, all layers, 4 threads on cpu0-3)
+2026-10-02T18:38:44Z NPU exit=0 pp 334.31±0.20 / tg 9.98±0.08
+2026-10-02T18:38:45Z == gemma-4-E4B_q4_0-it.gguf CPU (dotprod build, 4 threads on cpu0-3)
+2026-10-02T18:40:46Z CPU exit=0 pp 30.58±0.17 / tg 7.79±0.09
+2026-10-02T18:40:46Z NPU-DONE

@@ -1,0 +1,33 @@
+# model sha256 (Ventuno, 2026-10-02T20:26:18Z)
+246d67d45f5b0c7447ca0ce0bdb8b46b8a47b593c5068635dc16422c051d7be9  models/Ling-3.0-tiny-Q4_K_M.gguf
+70c112196e0b7023803c9762752e46d29e612a92c83f995bc3ba1ceb07e8fab6  models/Ornith-1.5-9B-Q4_K_M.gguf
+3646b4c147cd235a44d91df1546d3b7d8e29b547dbe4e1f80856419aa455e6fd  models-npu/gemma-4-E2B_q4_0-it.gguf
+e8b6a059ba86947a44ace84d6e5679795bc41862c25c30513142588f0e9dba1d  models-npu/gemma-4-E4B_q4_0-it.gguf
+2bbcd19cb09e5b0c193c95bd3905109dd9c1206347030e0f191a98f87aa541c3  models-keep/Ornith-1.5-35B-A3B-AD-IQ3_XXS-IQ2_S.gguf
+
+# binaries
+6a9e714e96d1c72a344ce57427765fb70c59dd9768b12295205c582e6a8fd0b5  llama-npu-7fe450e/bin/llama-bench
+42e6bfda24445ee82db561559a0cb3909180aee2c1f5bfcbebfe209382dc7845  llama-npu-7fe450e/lib/libggml-hexagon.so
+42e6bfda24445ee82db561559a0cb3909180aee2c1f5bfcbebfe209382dc7845  llama-npu-7fe450e/lib/libggml-hexagon.so.0
+42e6bfda24445ee82db561559a0cb3909180aee2c1f5bfcbebfe209382dc7845  llama-npu-7fe450e/lib/libggml-hexagon.so.0.25.1
+0cb6fcb69ddfbff17c42575cefbb95d18122a93ab058ab17e31a58e7c7defcff  llama-npu-7fe450e/lib/libggml-htp-v75.so
+6db9d4cba3b3193b85ad45b4d2a0f9cdacae4832f7e7a1efc4fd17f79f871eee  carwatch-stack/bench/llama.cpp-7fe450e19305b828c199d602c23a8337aaa1f03b/build/bin/llama-bench
+6db9d4cba3b3193b85ad45b4d2a0f9cdacae4832f7e7a1efc4fd17f79f871eee  carwatch-stack/bench/llama.cpp-7fe450e19305b828c199d602c23a8337aaa1f03b/build-native-nodotprod/bin/llama-bench
+arduino image: sha256:21ba65415bb783b568c62366ae61e8e2086859930ab43ca171b1e76d8787036d
+
+# CPU build flags
+## build
+CMAKE_BUILD_TYPE:STRING=Release
+GGML_CPU_ARM_ARCH:STRING=armv8.2-a+dotprod+fp16
+GGML_NATIVE:BOOL=OFF
+GGML_OPENMP:BOOL=ON
+HAVE_DOTPROD:INTERNAL=1
+## build-native-nodotprod
+CMAKE_BUILD_TYPE:STRING=Release
+GGML_CPU_ARM_ARCH:STRING=
+GGML_NATIVE:BOOL=ON
+GGML_OPENMP:BOOL=ON
+HAVE_DOTPROD:INTERNAL=
+# CPU backend libraries (where the build difference lives)
+ffa290b5c0ba4105a99a5b0d471fc021724c0e299ecaae0c842ec97bfe89c0dc  build/bin/libggml-cpu.so.0.25.1
+f00c1cfac01848fe952bfaa5dcb4b573b0fd8c8c7c1af24b9fcaa0ce3ba825da  build-native-nodotprod/bin/libggml-cpu.so.0.25.1

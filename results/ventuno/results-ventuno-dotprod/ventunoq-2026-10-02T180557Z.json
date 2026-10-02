@@ -1,0 +1,145 @@
+{
+  "brain": {
+    "llama_server_rss_kb_at_start": 0,
+    "stop_requested": false,
+    "stopped": false,
+    "unit": "carwatch-brain"
+  },
+  "device": {
+    "arch": "aarch64",
+    "cores": 8,
+    "cpu_models": [
+      "Cortex-A55",
+      "Cortex-A78C"
+    ],
+    "governor": "ondemand x2, schedutil x6",
+    "hostname": "ventunoq",
+    "kernel": "6.8.0-1078-qcom",
+    "max_mhz": "2361.6001",
+    "mem_available_start_bytes": 14554939392,
+    "mem_total_bytes": 16027451392,
+    "model": "Qualcomm Technologies, Inc. Monaco Monza addons",
+    "os": "Ubuntu 24.04.4 LTS",
+    "storage": "/dev/mmcblk0p71 (ext4, /dev/mmcblk0 mmc 59.3G)",
+    "temp_end_c": "40.503",
+    "temp_start_c": "39.133",
+    "thermal_zones_end": "aoss-2-thermal=35.1 cpu-1-0-0-thermal=35.4 aoss-3-thermal=34.7 cpu-1-0-1-thermal=35.4 cpu-1-1-1-thermal=35.1 cpu-1-2-1-thermal=35.4 cpu-1-3-1-thermal=35.1 nsp-0-0-1-thermal=34.7 pmm8620au_0_sail_xo=39.7 nsp-0-1-1-thermal=35.1 nsp-0-2-1-thermal=35.1 pmm8620au_0_ufs0=35.6 cpu-1-1-0-thermal=35.4 pmm8620au_0_xo=38.9 ddrss-1-thermal=35.4 pmm8650au_1_sdram=40.5 pmm8620au_0_mbg_tz=34.6 cpuss-1-1-thermal=35.1 aoss-0-thermal=35.1 pmm8620au-0-therm=34.6 cpu-0-0-0-thermal=35.8 pmm8650au_1_mbg_tz=36.0 cpu-0-1-0-thermal=35.1 cpu-1-2-0-thermal=35.8 cpu-0-2-0-thermal=35.1 cpu-0-3-0-thermal=34.7 gpuss-0-thermal=35.4 audio-thermal=35.1 pmm8650au-1-therm=36.0 camss-0-thermal=35.4 pcie-0-thermal=35.4 cpuss-0-0-thermal=35.4 aoss-1-thermal=35.7 cpu-0-0-1-thermal=36.0 cpu-1-3-0-thermal=35.8 cpu-0-1-1-thermal=35.3 cpu-0-2-1-thermal=35.7 cpu-0-3-1-thermal=35.3 gpuss-1-thermal=35.3 video-thermal=36.0 camss-1-thermal=35.7 pcie-1-thermal=34.9 cpuss-0-1-thermal=36.4 nsp-0-0-0-thermal=35.4 nsp-0-1-0-thermal=35.1 nsp-0-2-0-thermal=35.4 ddrss-0-thermal=35.4 cpuss-1-0-thermal=35.8",
+    "thermal_zones_start": "aoss-2-thermal=34.3 cpu-1-0-0-thermal=33.9 aoss-3-thermal=33.6 cpu-1-0-1-thermal=33.9 cpu-1-1-1-thermal=33.9 cpu-1-2-1-thermal=33.9 cpu-1-3-1-thermal=33.9 nsp-0-0-1-thermal=33.2 pmm8620au_0_sail_xo=38.6 nsp-0-1-1-thermal=33.9 nsp-0-2-1-thermal=33.9 pmm8620au_0_ufs0=34.5 cpu-1-1-0-thermal=33.9 pmm8620au_0_xo=37.8 ddrss-1-thermal=34.3 pmm8650au_1_sdram=39.1 pmm8620au_0_mbg_tz=33.5 cpuss-1-1-thermal=33.9 aoss-0-thermal=33.9 pmm8620au-0-therm=33.4 cpu-0-0-0-thermal=34.3 pmm8650au_1_mbg_tz=34.9 cpu-0-1-0-thermal=33.6 cpu-1-2-0-thermal=34.3 cpu-0-2-0-thermal=33.9 cpu-0-3-0-thermal=33.6 gpuss-0-thermal=33.9 audio-thermal=33.9 pmm8650au-1-therm=34.9 camss-0-thermal=34.3 pcie-0-thermal=34.3 cpuss-0-0-thermal=34.3 aoss-1-thermal=34.5 cpu-0-0-1-thermal=34.2 cpu-1-3-0-thermal=34.7 cpu-0-1-1-thermal=34.2 cpu-0-2-1-thermal=34.2 cpu-0-3-1-thermal=34.2 gpuss-1-thermal=34.2 video-thermal=34.5 camss-1-thermal=34.5 pcie-1-thermal=33.8 cpuss-0-1-thermal=34.9 nsp-0-0-0-thermal=33.9 nsp-0-1-0-thermal=33.6 nsp-0-2-0-thermal=34.3 ddrss-0-thermal=34.3 cpuss-1-0-thermal=35.1",
+    "throttled_end": "n/a (no vcgencmd; see thermal zones)",
+    "throttled_start": "n/a (no vcgencmd; see thermal zones)"
+  },
+  "downloads": {
+    "gemma4-e4b": "google/gemma-4-E4B-it-qat-q4_0-gguf/gemma-4-E4B_q4_0-it.gguf"
+  },
+  "exit_code": 0,
+  "finished_utc": "2026-10-02T18:14:37Z",
+  "model_dirs": [
+    "/home/arduino/models"
+  ],
+  "rows": [
+    {
+      "accel": false,
+      "backend": "CPU",
+      "bench_backends": "CPU",
+      "build_commit": "7fe450e",
+      "file": "gemma-4-E4B_q4_0-it.gguf",
+      "id": "gemma4-e4b",
+      "label": "Gemma 4 E4B QAT Q4_0",
+      "load_cache": "warm cache possible (no sudo -n; fadvise DONTNEED only)",
+      "load_s": 45.57,
+      "mem_available_bytes": 14501404672,
+      "mode": "carwatch",
+      "model_type": "gemma4 E4B Q4_0",
+      "n_gpu_layers": 0,
+      "nproc": 8,
+      "pp": {
+        "mean": 30.433459,
+        "n": 512,
+        "reps": 3,
+        "sd": 0.037027
+      },
+      "runtime": "llama.cpp",
+      "size_bytes": 5154941280,
+      "spec_note": "",
+      "status": "OK",
+      "temp_after_c": "40.56",
+      "temp_before_c": "39.671",
+      "tg": {
+        "mean": 7.651516,
+        "n": 128,
+        "reps": 3,
+        "sd": 0.085203
+      },
+      "thread_modes": [
+        "4"
+      ],
+      "threads": 4
+    },
+    {
+      "accel": false,
+      "backend": "CPU",
+      "bench_backends": "CPU",
+      "build_commit": "7fe450e",
+      "file": "gemma-4-E4B_q4_0-it.gguf",
+      "id": "gemma4-e4b",
+      "label": "Gemma 4 E4B QAT Q4_0",
+      "load_cache": "warm cache possible (no sudo -n; fadvise DONTNEED only)",
+      "load_s": 45.57,
+      "mem_available_bytes": 14501404672,
+      "mode": "carwatch",
+      "model_type": "gemma4 E4B Q4_0",
+      "n_gpu_layers": 0,
+      "nproc": 8,
+      "pp": {
+        "mean": 30.129981,
+        "n": 512,
+        "reps": 3,
+        "sd": 0.063225
+      },
+      "runtime": "llama.cpp",
+      "size_bytes": 5154941280,
+      "spec_note": "",
+      "status": "OK",
+      "temp_after_c": "40.56",
+      "temp_before_c": "39.671",
+      "tg": {
+        "mean": 4.373332,
+        "n": 128,
+        "reps": 3,
+        "sd": 0.033297
+      },
+      "thread_modes": [
+        "all"
+      ],
+      "threads": 8
+    }
+  ],
+  "runtimes": {
+    "llama.cpp": {
+      "bin": "/home/arduino/carwatch-stack/bench/llama.cpp-7fe450e19305b828c199d602c23a8337aaa1f03b/build/bin",
+      "cmake_flags": "GGML_BLAS=OFF GGML_CPU=ON GGML_CUDA=OFF GGML_METAL=OFF GGML_NATIVE=OFF GGML_OPENCL=OFF GGML_OPENCL_USE_ADRENO_KERNELS=ON GGML_VULKAN=OFF",
+      "commit": "7fe450e19305b828c199d602c23a8337aaa1f03b",
+      "ref": "7fe450e19305b828c199d602c23a8337aaa1f03b"
+    }
+  },
+  "schema": "carwatch-board-bench/1",
+  "script_commit": "8a61056",
+  "services": {
+    "brain_threads": 4,
+    "busy_at_start": "ps(200%)",
+    "modes": "carwatch"
+  },
+  "settings": {
+    "accel": "none",
+    "headroom_gb": 1.5,
+    "n_gen": 128,
+    "n_prompt": 512,
+    "only": "gemma4-e4b",
+    "repetitions": 3,
+    "threads": [
+      4,
+      8
+    ]
+  },
+  "started_utc": "2026-10-02T18:05:57Z"
+}

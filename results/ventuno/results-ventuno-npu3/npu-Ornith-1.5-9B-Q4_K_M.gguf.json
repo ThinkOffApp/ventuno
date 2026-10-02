@@ -1,0 +1,31 @@
+[New LWP 86535]
+[New LWP 86534]
+[New LWP 86533]
+[New LWP 86532]
+[New LWP 86531]
+[New LWP 86528]
+[New LWP 86527]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/aarch64-linux-gnu/libthread_db.so.1".
+0x0000ffff8d237a34 in __GI___wait4 (pid=86536, stat_loc=0x0, options=0, usage=0x0) at ../sysdeps/unix/sysv/linux/wait4.c:30
+#0  0x0000ffff8d237a34 in __GI___wait4 (pid=86536, stat_loc=0x0, options=0, usage=0x0) at ../sysdeps/unix/sysv/linux/wait4.c:30
+30	in ../sysdeps/unix/sysv/linux/wait4.c
+#1  0x0000ffff8d6b0170 in ggml_print_backtrace () from /home/arduino/llama-npu-7fe450e/lib/libggml-base.so.0
+#2  0x0000ffff8d6c5f44 in ggml_uncaught_exception() () from /home/arduino/llama-npu-7fe450e/lib/libggml-base.so.0
+#3  0x0000ffff8d4ba570 in ?? () from /lib/aarch64-linux-gnu/libstdc++.so.6
+#4  0x0000ffff8d4b0e04 in std::terminate() () from /lib/aarch64-linux-gnu/libstdc++.so.6
+#5  0x0000ffff8d4ba908 in __cxa_throw () from /lib/aarch64-linux-gnu/libstdc++.so.6
+#6  0x0000ffff8d78def0 in ggml_hexagon_shared_buffer::mmap(bool) () from /home/arduino/llama-npu-7fe450e/lib/libggml-hexagon.so.0
+#7  0x0000ffff8d79ee88 in ggml_hexagon_session::enqueue_op(htp_opnode const&) () from /home/arduino/llama-npu-7fe450e/lib/libggml-hexagon.so.0
+#8  0x0000ffff8d7ad410 in ggml_backend_hexagon_graph_compute(ggml_backend*, ggml_cgraph*) () from /home/arduino/llama-npu-7fe450e/lib/libggml-hexagon.so.0
+#9  0x0000ffff8d6d14a8 in ggml_backend_sched_graph_compute_async () from /home/arduino/llama-npu-7fe450e/lib/libggml-base.so.0
+#10 0x0000ffff8db3e30c in llama_context::graph_compute(ggml_cgraph*, bool) () from /home/arduino/llama-npu-7fe450e/lib/libllama.so.0
+#11 0x0000ffff8db3e134 in llama_context::process_ubatch(llama_ubatch const&, llm_graph_type, llama_memory_context_i*, ggml_status&) () from /home/arduino/llama-npu-7fe450e/lib/libllama.so.0
+#12 0x0000ffff8db3f9b8 in llama_context::decode(llama_batch const&) () from /home/arduino/llama-npu-7fe450e/lib/libllama.so.0
+#13 0x0000ffff8db47758 in llama_decode () from /home/arduino/llama-npu-7fe450e/lib/libllama.so.0
+#14 0x0000ffff8e155c14 in test_prompt(llama_context*, int, int, int) () from /home/arduino/llama-npu-7fe450e/lib/libllama-bench-impl.so
+#15 0x0000ffff8e14df40 in llama_bench(int, char**) () from /home/arduino/llama-npu-7fe450e/lib/libllama-bench-impl.so
+#16 0x0000ffff8d1884c4 in __libc_start_call_main (main=main@entry=0xaaaad8080868 <main>, argc=argc@entry=19, argv=argv@entry=0xffffd1027b88) at ../sysdeps/nptl/libc_start_call_main.h:58
+#17 0x0000ffff8d188598 in __libc_start_main_impl (main=0xaaaad8080868 <main>, argc=19, argv=0xffffd1027b88, init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, stack_end=<optimized out>) at ../csu/libc-start.c:360
+#18 0x0000aaaad8080770 in _start ()
+[Inferior 1 (process 86526) detached]

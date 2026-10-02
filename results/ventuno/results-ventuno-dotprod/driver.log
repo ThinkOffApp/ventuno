@@ -1,0 +1,15 @@
+2026-10-02T17:54:29Z start; ventunoq; bench 8a61056
+2026-10-02T17:54:29Z == gemma4-e2b
+2026-10-02T17:56:36Z gemma4-e2b exit=1 (Qwen3.8-27B-UD-Q2_K_XL.gguf google_gemma-4-E2B-it-Q4_K_M.gguf )
+2026-10-02T17:56:37Z gemma4-e2b cleaned; free 14G
+2026-10-02T17:56:37Z == ling3-tiny
+2026-10-02T18:05:56Z ling3-tiny exit=0 (Ling-3.0-tiny-Q4_K_M.gguf Qwen3.8-27B-UD-Q2_K_XL.gguf )
+2026-10-02T18:05:57Z ling3-tiny cleaned; free 14G
+2026-10-02T18:05:57Z == gemma4-e4b
+2026-10-02T18:14:37Z gemma4-e4b exit=0 (gemma-4-E4B_q4_0-it.gguf )
+2026-10-02T18:14:38Z gemma4-e4b cleaned; free 23G
+2026-10-02T18:14:38Z == ornith-9b
+2026-10-02T18:29:26Z ornith-9b exit=0 (Ornith-1.5-9B-Q4_K_M.gguf )
+2026-10-02T18:29:26Z ornith-9b cleaned; free 23G
+2026-10-02T18:29:26Z == qwen36-35b
+2026-10-02T18:30:30Z STOPPED early by claudemb before qwen36-35b; remaining models in results-ventuno-quick. DOTPROD-DONE

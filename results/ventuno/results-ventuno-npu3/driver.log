@@ -1,0 +1,8 @@
+2026-10-02T19:51:52Z start; ventunoq; NPU build llama-npu-7fe450e
+2026-10-02T19:51:52Z == gemma-4-E2B_q4_0-it.gguf NPU (HTP0, all layers, -r 3)
+2026-10-02T19:52:30Z NPU exit=0 pp 698.09±0.24 / tg 21.38±0.08
+2026-10-02T19:52:30Z == Ling-3.0-tiny-Q4_K_M.gguf NPU (HTP0, all layers, -r 3)
+2026-10-02T19:53:02Z NPU exit=134 json.decoder.JSONDecodeError: Expecting value: line 1 column 2 (char 1)
+2026-10-02T19:56:31Z == Ornith-1.5-9B-Q4_K_M.gguf NPU (HTP0, all layers, -r 3)
+2026-10-02T19:56:49Z NPU exit=134 json.decoder.JSONDecodeError: Expecting value: line 1 column 2 (char 1)
+2026-10-02T19:56:49Z == Ornith-1.5-35B-A3B-AD-IQ3_XXS-IQ2_S.gguf NPU (HTP0, all layers, -r 1)

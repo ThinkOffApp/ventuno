@@ -1,0 +1,145 @@
+{
+  "brain": {
+    "llama_server_rss_kb_at_start": 0,
+    "stop_requested": false,
+    "stopped": false,
+    "unit": "carwatch-brain"
+  },
+  "device": {
+    "arch": "aarch64",
+    "cores": 8,
+    "cpu_models": [
+      "Cortex-A55",
+      "Cortex-A78C"
+    ],
+    "governor": "ondemand x2, schedutil x6",
+    "hostname": "ventunoq",
+    "kernel": "6.8.0-1078-qcom",
+    "max_mhz": "2361.6001",
+    "mem_available_start_bytes": 14524399616,
+    "mem_total_bytes": 16027451392,
+    "model": "Qualcomm Technologies, Inc. Monaco Monza addons",
+    "os": "Ubuntu 24.04.4 LTS",
+    "storage": "/dev/mmcblk0p71 (ext4, /dev/mmcblk0 mmc 59.3G)",
+    "temp_end_c": "39.297",
+    "temp_start_c": "39.372",
+    "thermal_zones_end": "aoss-2-thermal=34.3 cpu-1-0-0-thermal=33.9 aoss-3-thermal=33.9 cpu-1-0-1-thermal=34.3 cpu-1-1-1-thermal=33.9 cpu-1-2-1-thermal=34.3 cpu-1-3-1-thermal=34.3 nsp-0-0-1-thermal=33.6 pmm8620au_0_sail_xo=38.6 nsp-0-1-1-thermal=33.9 nsp-0-2-1-thermal=34.3 pmm8620au_0_ufs0=34.6 cpu-1-1-0-thermal=34.3 pmm8620au_0_xo=37.8 ddrss-1-thermal=34.3 pmm8650au_1_sdram=39.2 pmm8620au_0_mbg_tz=33.5 cpuss-1-1-thermal=34.3 aoss-0-thermal=33.9 pmm8620au-0-therm=33.5 cpu-0-0-0-thermal=34.3 pmm8650au_1_mbg_tz=35.0 cpu-0-1-0-thermal=34.3 cpu-1-2-0-thermal=34.3 cpu-0-2-0-thermal=33.9 cpu-0-3-0-thermal=34.3 gpuss-0-thermal=33.9 audio-thermal=33.9 pmm8650au-1-therm=35.2 camss-0-thermal=34.3 pcie-0-thermal=33.9 cpuss-0-0-thermal=34.3 aoss-1-thermal=34.5 cpu-0-0-1-thermal=34.9 cpu-1-3-0-thermal=34.7 cpu-0-1-1-thermal=34.5 cpu-0-2-1-thermal=34.9 cpu-0-3-1-thermal=34.2 gpuss-1-thermal=34.2 video-thermal=34.5 camss-1-thermal=34.2 pcie-1-thermal=33.8 cpuss-0-1-thermal=34.9 nsp-0-0-0-thermal=34.3 nsp-0-1-0-thermal=33.6 nsp-0-2-0-thermal=34.3 ddrss-0-thermal=34.3 cpuss-1-0-thermal=34.7",
+    "thermal_zones_start": "aoss-2-thermal=35.8 cpu-1-0-0-thermal=36.2 aoss-3-thermal=35.4 cpu-1-0-1-thermal=36.2 cpu-1-1-1-thermal=35.4 cpu-1-2-1-thermal=36.2 cpu-1-3-1-thermal=35.8 nsp-0-0-1-thermal=35.4 pmm8620au_0_sail_xo=38.6 nsp-0-1-1-thermal=35.8 nsp-0-2-1-thermal=35.4 pmm8620au_0_ufs0=36.2 cpu-1-1-0-thermal=35.8 pmm8620au_0_xo=38.1 ddrss-1-thermal=35.8 pmm8650au_1_sdram=39.4 pmm8620au_0_mbg_tz=34.7 cpuss-1-1-thermal=35.8 aoss-0-thermal=35.8 pmm8620au-0-therm=34.7 cpu-0-0-0-thermal=35.8 pmm8650au_1_mbg_tz=36.3 cpu-0-1-0-thermal=35.8 cpu-1-2-0-thermal=36.2 cpu-0-2-0-thermal=35.4 cpu-0-3-0-thermal=35.4 gpuss-0-thermal=35.8 audio-thermal=35.4 pmm8650au-1-therm=36.3 camss-0-thermal=35.4 pcie-0-thermal=35.8 cpuss-0-0-thermal=35.8 aoss-1-thermal=36.4 cpu-0-0-1-thermal=36.0 cpu-1-3-0-thermal=36.5 cpu-0-1-1-thermal=35.7 cpu-0-2-1-thermal=36.0 cpu-0-3-1-thermal=35.7 gpuss-1-thermal=36.0 video-thermal=36.0 camss-1-thermal=36.0 pcie-1-thermal=35.7 cpuss-0-1-thermal=36.4 nsp-0-0-0-thermal=36.2 nsp-0-1-0-thermal=35.4 nsp-0-2-0-thermal=36.2 ddrss-0-thermal=36.2 cpuss-1-0-thermal=36.5",
+    "throttled_end": "n/a (no vcgencmd; see thermal zones)",
+    "throttled_start": "n/a (no vcgencmd; see thermal zones)"
+  },
+  "downloads": {
+    "ling3-tiny": "inclusionAI/Ling-3.0-tiny-GGUF/Ling-3.0-tiny-Q4_K_M.gguf"
+  },
+  "exit_code": 0,
+  "finished_utc": "2026-10-02T18:05:56Z",
+  "model_dirs": [
+    "/home/arduino/models"
+  ],
+  "rows": [
+    {
+      "accel": false,
+      "backend": "CPU",
+      "bench_backends": "CPU",
+      "build_commit": "7fe450e",
+      "file": "Ling-3.0-tiny-Q4_K_M.gguf",
+      "id": "ling3-tiny",
+      "label": "Ling 3.0 tiny Q4_K_M (current car brain)",
+      "load_cache": "warm cache possible (no sudo -n; fadvise DONTNEED only)",
+      "load_s": 29.34,
+      "mem_available_bytes": 14283866112,
+      "mode": "carwatch",
+      "model_type": "bailingmoe3 7.9B.A1.3B Q4_K - Medium",
+      "n_gpu_layers": 0,
+      "nproc": 8,
+      "pp": {
+        "mean": 49.16442,
+        "n": 512,
+        "reps": 3,
+        "sd": 0.51766
+      },
+      "runtime": "llama.cpp",
+      "size_bytes": 4823894944,
+      "spec_note": "",
+      "status": "OK",
+      "temp_after_c": "39.328",
+      "temp_before_c": "40.388",
+      "tg": {
+        "mean": 20.055868,
+        "n": 128,
+        "reps": 3,
+        "sd": 0.300264
+      },
+      "thread_modes": [
+        "4"
+      ],
+      "threads": 4
+    },
+    {
+      "accel": false,
+      "backend": "CPU",
+      "bench_backends": "CPU",
+      "build_commit": "7fe450e",
+      "file": "Ling-3.0-tiny-Q4_K_M.gguf",
+      "id": "ling3-tiny",
+      "label": "Ling 3.0 tiny Q4_K_M (current car brain)",
+      "load_cache": "warm cache possible (no sudo -n; fadvise DONTNEED only)",
+      "load_s": 29.34,
+      "mem_available_bytes": 14283866112,
+      "mode": "carwatch",
+      "model_type": "bailingmoe3 7.9B.A1.3B Q4_K - Medium",
+      "n_gpu_layers": 0,
+      "nproc": 8,
+      "pp": {
+        "mean": 43.391903,
+        "n": 512,
+        "reps": 3,
+        "sd": 0.489326
+      },
+      "runtime": "llama.cpp",
+      "size_bytes": 4823894944,
+      "spec_note": "",
+      "status": "OK",
+      "temp_after_c": "39.328",
+      "temp_before_c": "40.388",
+      "tg": {
+        "mean": 6.173302,
+        "n": 128,
+        "reps": 3,
+        "sd": 0.06087
+      },
+      "thread_modes": [
+        "all"
+      ],
+      "threads": 8
+    }
+  ],
+  "runtimes": {
+    "llama.cpp": {
+      "bin": "/home/arduino/carwatch-stack/bench/llama.cpp-7fe450e19305b828c199d602c23a8337aaa1f03b/build/bin",
+      "cmake_flags": "GGML_BLAS=OFF GGML_CPU=ON GGML_CUDA=OFF GGML_METAL=OFF GGML_NATIVE=OFF GGML_OPENCL=OFF GGML_OPENCL_USE_ADRENO_KERNELS=ON GGML_VULKAN=OFF",
+      "commit": "7fe450e19305b828c199d602c23a8337aaa1f03b",
+      "ref": "7fe450e19305b828c199d602c23a8337aaa1f03b"
+    }
+  },
+  "schema": "carwatch-board-bench/1",
+  "script_commit": "8a61056",
+  "services": {
+    "brain_threads": 4,
+    "busy_at_start": "ps(200%)",
+    "modes": "carwatch"
+  },
+  "settings": {
+    "accel": "none",
+    "headroom_gb": 1.5,
+    "n_gen": 128,
+    "n_prompt": 512,
+    "only": "ling3-tiny",
+    "repetitions": 3,
+    "threads": [
+      4,
+      8
+    ]
+  },
+  "started_utc": "2026-10-02T17:56:37Z"
+}

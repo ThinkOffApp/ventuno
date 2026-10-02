@@ -1,0 +1,13 @@
+ggml-hex: Loading driver libcdsprpc.so
+ggml-hex: FASTRPC_GET_DOMAINS query failed (0x6c), using static CDSP domains
+ggml-hex: Hexagon backend (experimental) : allocating new registry : ndev 3
+ggml-hex: Hexagon Arch version v75, DMA64 disabled
+ggml-hex: device 0: HTP0 (phys=0, virt=0, domain=cdsp:3)
+ggml-hex: device 1: HTP1 (phys=0, virt=1, domain=cdsp:3)
+ggml-hex: device 2: HTP2 (phys=0, virt=2, domain=cdsp:3)
+warning: 30	../sysdeps/unix/sysv/linux/wait4.c: No such file or directory
+warning: 58	../sysdeps/nptl/libc_start_call_main.h: No such file or directory
+warning: 360	../csu/libc-start.c: No such file or directory
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  ggml-hex: fastrpc_mmap failed (see log for details)
+timeout: the monitored command dumped core

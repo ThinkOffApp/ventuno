@@ -1,0 +1,145 @@
+{
+  "brain": {
+    "llama_server_rss_kb_at_start": 0,
+    "stop_requested": false,
+    "stopped": false,
+    "unit": "carwatch-brain"
+  },
+  "device": {
+    "arch": "aarch64",
+    "cores": 8,
+    "cpu_models": [
+      "Cortex-A55",
+      "Cortex-A78C"
+    ],
+    "governor": "ondemand x2, schedutil x6",
+    "hostname": "ventunoq",
+    "kernel": "6.8.0-1078-qcom",
+    "max_mhz": "2361.6001",
+    "mem_available_start_bytes": 14548361216,
+    "mem_total_bytes": 16027451392,
+    "model": "Qualcomm Technologies, Inc. Monaco Monza addons",
+    "os": "Ubuntu 24.04.4 LTS",
+    "storage": "/dev/mmcblk0p71 (ext4, /dev/mmcblk0 mmc 59.3G)",
+    "temp_end_c": "40.515",
+    "temp_start_c": "40.253",
+    "thermal_zones_end": "aoss-2-thermal=35.4 cpu-1-0-0-thermal=35.4 aoss-3-thermal=35.1 cpu-1-0-1-thermal=35.4 cpu-1-1-1-thermal=35.4 cpu-1-2-1-thermal=35.4 cpu-1-3-1-thermal=35.1 nsp-0-0-1-thermal=34.7 pmm8620au_0_sail_xo=39.6 nsp-0-1-1-thermal=34.7 nsp-0-2-1-thermal=35.4 pmm8620au_0_ufs0=35.6 cpu-1-1-0-thermal=35.1 pmm8620au_0_xo=38.8 ddrss-1-thermal=35.4 pmm8650au_1_sdram=40.5 pmm8620au_0_mbg_tz=34.4 cpuss-1-1-thermal=35.1 aoss-0-thermal=35.1 pmm8620au-0-therm=34.4 cpu-0-0-0-thermal=35.8 pmm8650au_1_mbg_tz=35.9 cpu-0-1-0-thermal=35.1 cpu-1-2-0-thermal=35.4 cpu-0-2-0-thermal=35.1 cpu-0-3-0-thermal=35.1 gpuss-0-thermal=35.1 audio-thermal=35.1 pmm8650au-1-therm=35.9 camss-0-thermal=35.1 pcie-0-thermal=35.1 cpuss-0-0-thermal=35.4 aoss-1-thermal=35.7 cpu-0-0-1-thermal=35.7 cpu-1-3-0-thermal=35.8 cpu-0-1-1-thermal=34.9 cpu-0-2-1-thermal=35.7 cpu-0-3-1-thermal=35.3 gpuss-1-thermal=34.9 video-thermal=35.7 camss-1-thermal=35.3 pcie-1-thermal=34.9 cpuss-0-1-thermal=36.4 nsp-0-0-0-thermal=35.4 nsp-0-1-0-thermal=34.7 nsp-0-2-0-thermal=35.4 ddrss-0-thermal=35.4 cpuss-1-0-thermal=35.4",
+    "thermal_zones_start": "aoss-2-thermal=35.1 cpu-1-0-0-thermal=35.1 aoss-3-thermal=34.7 cpu-1-0-1-thermal=35.1 cpu-1-1-1-thermal=35.1 cpu-1-2-1-thermal=35.1 cpu-1-3-1-thermal=35.1 nsp-0-0-1-thermal=34.7 pmm8620au_0_sail_xo=39.6 nsp-0-1-1-thermal=34.7 nsp-0-2-1-thermal=34.7 pmm8620au_0_ufs0=35.5 cpu-1-1-0-thermal=35.1 pmm8620au_0_xo=38.8 ddrss-1-thermal=35.1 pmm8650au_1_sdram=40.2 pmm8620au_0_mbg_tz=34.6 cpuss-1-1-thermal=34.7 aoss-0-thermal=35.1 pmm8620au-0-therm=34.5 cpu-0-0-0-thermal=35.4 pmm8650au_1_mbg_tz=36.0 cpu-0-1-0-thermal=35.1 cpu-1-2-0-thermal=35.4 cpu-0-2-0-thermal=34.7 cpu-0-3-0-thermal=35.1 gpuss-0-thermal=35.1 audio-thermal=35.1 pmm8650au-1-therm=35.9 camss-0-thermal=35.1 pcie-0-thermal=34.7 cpuss-0-0-thermal=35.4 aoss-1-thermal=35.3 cpu-0-0-1-thermal=35.3 cpu-1-3-0-thermal=35.4 cpu-0-1-1-thermal=35.7 cpu-0-2-1-thermal=35.3 cpu-0-3-1-thermal=34.9 gpuss-1-thermal=35.3 video-thermal=35.3 camss-1-thermal=35.3 pcie-1-thermal=34.9 cpuss-0-1-thermal=35.7 nsp-0-0-0-thermal=35.4 nsp-0-1-0-thermal=34.7 nsp-0-2-0-thermal=35.4 ddrss-0-thermal=35.1 cpuss-1-0-thermal=35.8",
+    "throttled_end": "n/a (no vcgencmd; see thermal zones)",
+    "throttled_start": "n/a (no vcgencmd; see thermal zones)"
+  },
+  "downloads": {
+    "ornith-9b": "ornith-ai/Ornith-1.5-9B-GGUF/Ornith-1.5-9B-Q4_K_M.gguf"
+  },
+  "exit_code": 0,
+  "finished_utc": "2026-10-02T18:29:25Z",
+  "model_dirs": [
+    "/home/arduino/models"
+  ],
+  "rows": [
+    {
+      "accel": false,
+      "backend": "CPU",
+      "bench_backends": "CPU",
+      "build_commit": "7fe450e",
+      "file": "Ornith-1.5-9B-Q4_K_M.gguf",
+      "id": "ornith-9b",
+      "label": "Ornith 1.5 9B (dense) Q4_K_M",
+      "load_cache": "warm cache possible (no sudo -n; fadvise DONTNEED only)",
+      "load_s": 34.0,
+      "mem_available_bytes": 14516289536,
+      "mode": "carwatch",
+      "model_type": "qwen35 9B Q4_K - Medium",
+      "n_gpu_layers": 0,
+      "nproc": 8,
+      "pp": {
+        "mean": 10.175383,
+        "n": 512,
+        "reps": 3,
+        "sd": 0.059793
+      },
+      "runtime": "llama.cpp",
+      "size_bytes": 5780090816,
+      "spec_note": "",
+      "status": "OK",
+      "temp_after_c": "40.566",
+      "temp_before_c": "41.024",
+      "tg": {
+        "mean": 4.146174,
+        "n": 128,
+        "reps": 3,
+        "sd": 0.020716
+      },
+      "thread_modes": [
+        "4"
+      ],
+      "threads": 4
+    },
+    {
+      "accel": false,
+      "backend": "CPU",
+      "bench_backends": "CPU",
+      "build_commit": "7fe450e",
+      "file": "Ornith-1.5-9B-Q4_K_M.gguf",
+      "id": "ornith-9b",
+      "label": "Ornith 1.5 9B (dense) Q4_K_M",
+      "load_cache": "warm cache possible (no sudo -n; fadvise DONTNEED only)",
+      "load_s": 34.0,
+      "mem_available_bytes": 14516289536,
+      "mode": "carwatch",
+      "model_type": "qwen35 9B Q4_K - Medium",
+      "n_gpu_layers": 0,
+      "nproc": 8,
+      "pp": {
+        "mean": 11.124662,
+        "n": 512,
+        "reps": 3,
+        "sd": 0.017494
+      },
+      "runtime": "llama.cpp",
+      "size_bytes": 5780090816,
+      "spec_note": "",
+      "status": "OK",
+      "temp_after_c": "40.566",
+      "temp_before_c": "41.024",
+      "tg": {
+        "mean": 2.545445,
+        "n": 128,
+        "reps": 3,
+        "sd": 0.016035
+      },
+      "thread_modes": [
+        "all"
+      ],
+      "threads": 8
+    }
+  ],
+  "runtimes": {
+    "llama.cpp": {
+      "bin": "/home/arduino/carwatch-stack/bench/llama.cpp-7fe450e19305b828c199d602c23a8337aaa1f03b/build/bin",
+      "cmake_flags": "GGML_BLAS=OFF GGML_CPU=ON GGML_CUDA=OFF GGML_METAL=OFF GGML_NATIVE=OFF GGML_OPENCL=OFF GGML_OPENCL_USE_ADRENO_KERNELS=ON GGML_VULKAN=OFF",
+      "commit": "7fe450e19305b828c199d602c23a8337aaa1f03b",
+      "ref": "7fe450e19305b828c199d602c23a8337aaa1f03b"
+    }
+  },
+  "schema": "carwatch-board-bench/1",
+  "script_commit": "8a61056",
+  "services": {
+    "brain_threads": 4,
+    "busy_at_start": "ps(200%)",
+    "modes": "carwatch"
+  },
+  "settings": {
+    "accel": "none",
+    "headroom_gb": 1.5,
+    "n_gen": 128,
+    "n_prompt": 512,
+    "only": "ornith-9b",
+    "repetitions": 3,
+    "threads": [
+      4,
+      8
+    ]
+  },
+  "started_utc": "2026-10-02T18:14:38Z"
+}
