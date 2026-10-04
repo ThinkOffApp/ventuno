@@ -10,13 +10,23 @@ log "start; $(hostname); NPU build $(basename $P)"
 declare -A URL=(
   [gemma-4-E2B_q4_0-it.gguf]=https://huggingface.co/google/gemma-4-E2B-it-qat-q4_0-gguf/resolve/1894d1fc0a19d86697abd40483f5983c867df03f/gemma-4-E2B_q4_0-it.gguf
   [Ling-3.0-tiny-Q4_K_M.gguf]=https://huggingface.co/inclusionAI/Ling-3.0-tiny-GGUF/resolve/main/Ling-3.0-tiny-Q4_K_M.gguf
+  [gemma-4-E4B_q4_0-it.gguf]=https://huggingface.co/google/gemma-4-E4B-it-qat-q4_0-gguf/resolve/99ef3d9bbf819591699ffa9084c4be12db1fbe6c/gemma-4-E4B_q4_0-it.gguf
   [Ornith-1.5-9B-Q4_K_M.gguf]=https://huggingface.co/ornith-ai/Ornith-1.5-9B-GGUF/resolve/main/Ornith-1.5-9B-Q4_K_M.gguf )
-for f in gemma-4-E2B_q4_0-it.gguf Ling-3.0-tiny-Q4_K_M.gguf Ornith-1.5-9B-Q4_K_M.gguf Ornith-1.5-35B-A3B-AD-IQ3_XXS-IQ2_S.gguf; do
+# One NPU session maps about 3.5 GB, so anything larger needs several. These are the counts that worked;
+# with fewer, llama-bench aborts with `fastrpc_mmap failed`. See results/ventuno/README-commands.txt.
+declare -A DEV=(
+  [gemma-4-E2B_q4_0-it.gguf]=1
+  [gemma-4-E4B_q4_0-it.gguf]=3
+  [Ling-3.0-tiny-Q4_K_M.gguf]=3
+  [Ornith-1.5-9B-Q4_K_M.gguf]=4
+  [Ornith-1.5-35B-A3B-AD-IQ3_XXS-IQ2_S.gguf]=4 )
+for f in gemma-4-E2B_q4_0-it.gguf gemma-4-E4B_q4_0-it.gguf Ling-3.0-tiny-Q4_K_M.gguf Ornith-1.5-9B-Q4_K_M.gguf Ornith-1.5-35B-A3B-AD-IQ3_XXS-IQ2_S.gguf; do
   d=$M; [ -s ~/models-keep/$f ] && d=~/models-keep; [ -s ~/models-npu/$f ] && d=~/models-npu
   [ -s $d/$f ] || curl -sfL -o $d/$f "${URL[$f]}" || { log "$f download FAILED"; continue; }
   reps=3; [ $(stat -c %s $d/$f) -gt 8000000000 ] && reps=1
-  log "== $f NPU (HTP0, all layers, -r $reps)"
-  timeout 1800 taskset -c 0-3 $P/bin/llama-bench -m $d/$f -dev HTP0 -ngl 99 -t 4 -fa 1 -p 512 -n 128 -r $reps -o json \
+  nd=${DEV[$f]:-1}; devs=HTP0; for i in $(seq 1 $((nd-1))); do devs="$devs/HTP$i"; done
+  log "== $f NPU ($devs, GGML_HEXAGON_DEVICES=$nd, all layers, -r $reps)"
+  env GGML_HEXAGON_DEVICES=$nd timeout 1800 taskset -c 0-3 $P/bin/llama-bench -m $d/$f -dev $devs -ngl 99 -t 4 -fa 1 -p 512 -n 128 -r $reps -o json \
     > $OUT/npu-$f.json 2> $OUT/npu-$f.err
   log "NPU exit=$? $(python3 -c "import json;print(' / '.join(f\"{'pp' if r['n_prompt'] else 'tg'} {r['avg_ts']:.2f}±{r['stddev_ts']:.2f}\" for r in json.load(open('$OUT/npu-$f.json'))))" 2>&1 | tail -1)"
 done
