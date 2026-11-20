@@ -63,4 +63,4 @@ Then on the VENTUNO Q (no sudo needed; the `arduino` user can already reach the 
 - [`scripts/`](scripts/): the scripts that ran the VENTUNO passes.
 - [`build/`](build/): NPU build and install.
 
-MIT licensed (this repo's scripts and docs). llama.cpp is MIT licensed by its authors.
+This repo's scripts and docs are licensed under AGPL-3.0 (see [LICENSE](LICENSE)); versions up to commit `c3fd91f` were published under the MIT licence. llama.cpp is MIT licensed by its authors.
