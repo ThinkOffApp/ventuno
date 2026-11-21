@@ -15,5 +15,6 @@ harness around each phase: 38.4 prompt and 21.2 generation tokens per second.
 
 harness.zig is the measuring program (like llama-bench, it feeds fixed pseudo-random token IDs, the prompt
 eight rows at a time, then one token per step). provenance.json has every repetition, the binary and model
-hashes, the measured commit and the build flags. The run was measured on commit ccb31b2e0, whose code is the
-same as ab0e78818 apart from documentation.
+hashes, the measured commit and the build flags. The run was measured on a local commit (ccb31b2e0 in provenance.json) whose source tree is
+identical to bc697d8c2 on the ling-arm-cpu branch; that branch's head ab0e78818 adds documentation only.
+Both become public when round 2 of #4266 is pushed.
