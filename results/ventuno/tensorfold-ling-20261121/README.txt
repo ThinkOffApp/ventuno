@@ -10,5 +10,10 @@ and 128 generated tokens as separate phases. Repetition 0 is a warmup; repetitio
 measured.
 
 pp512-tg128.log is the raw log: one BEGIN/END line pair per phase and repetition, with the elapsed
-nanoseconds and tokens per second. The table reports the mean of repetitions 1 to 3, timed from
-outside the program: 38.4 prompt and 21.2 generation tokens per second.
+nanoseconds and tokens per second. The table reports the mean of repetitions 1 to 3, timed by the
+harness around each phase: 38.4 prompt and 21.2 generation tokens per second.
+
+harness.zig is the measuring program (like llama-bench, it feeds fixed pseudo-random token IDs, the prompt
+eight rows at a time, then one token per step). provenance.json has every repetition, the binary and model
+hashes, the measured commit and the build flags. The run was measured on commit ccb31b2e0, whose code is the
+same as ab0e78818 apart from documentation.
