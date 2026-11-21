@@ -18,7 +18,8 @@ board's own CPU and a Raspberry Pi 5. Measured on 2 October 2026.
 Every row uses the same GGUF file in every column (SHA256s in [`results/ventuno/provenance.txt`](results/ventuno/provenance.txt)).
 llama.cpp commit `7fe450e`, 4 threads, `llama-bench -p 512 -n 128`. Repetitions: Pi 5 and the smaller VENTUNO CPU rows 3,
 Gemma on the NPU 3, the NPU rows for Ornith 9B and Ling 1, the 35B rows 1. The TensorFold row was measured on
-21 November 2026, see below.
+21 November 2026, see below; its raw log and build are in
+[`results/ventuno/tensorfold-ling-20261121/`](results/ventuno/tensorfold-ling-20261121/).
 
 ## Ling 3 tiny on TensorFold
 
@@ -35,9 +36,9 @@ for reviewing our work on it.
 - **Two modes.** The default mode is exact: every projection matches a scalar reference bit for bit. The speed above is
   the opt-in fast mode, which uses 8-bit integer dot products and is not bit-exact.
 - **Status.** The ARM CPU decoder is in review as
-  [ashhart/TensorFold#4266](https://github.com/ashhart/TensorFold/pull/4266), not yet in a TensorFold release. Our Metal
-  forward for Ling ([#3919](https://github.com/ashhart/TensorFold/pull/3919)) is merged. Build and run steps are in that
-  PR's recipe.
+  [ashhart/TensorFold#4266](https://github.com/ashhart/TensorFold/pull/4266), not yet in a TensorFold release. Build and run steps are in
+  that PR's recipe, `docs/recipes/ling-3.0-tiny-cpu.md`. Our Metal forward for Ling
+  ([#3919](https://github.com/ashhart/TensorFold/pull/3919)) is merged.
 - **Latency** in the voice demo today is about 10 to 14 seconds from the end of a spoken question to the first spoken
   word; most of it is speech recognition. We are working on it. The voice app itself will be published in this repo.
 
