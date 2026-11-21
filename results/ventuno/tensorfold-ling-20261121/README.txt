@@ -17,4 +17,4 @@ harness.zig is the measuring program (like llama-bench, it feeds fixed pseudo-ra
 eight rows at a time, then one token per step). provenance.json has every repetition, the binary and model
 hashes, the measured commit and the build flags. The run was measured on a local commit (ccb31b2e0 in provenance.json) whose source tree is
 identical to bc697d8c2 on the ling-arm-cpu branch; that branch's head ab0e78818 adds documentation only.
-Both become public when round 2 of #4266 is pushed.
+Both are public on that branch since round 2 of #4266 was pushed (21 November 2026).
