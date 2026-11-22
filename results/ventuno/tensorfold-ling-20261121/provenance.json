@@ -1,0 +1,163 @@
+{
+  "measured_date_utc": "2026-11-21",
+  "runtime_source_commit": "ccb31b2e09179baf73933edfc873d0c20769b380",
+  "runtime_equivalent_round2_head": "ab0e78818bcddbb36cc277d72b6e9149d0b1d954",
+  "equivalence_note": "Later round2 changes are documentation only. Unused helper cleanup after measurement produced byte-identical .text in a same-path rebuild; the measured ELF SHA is listed below.",
+  "benchmark": "separate pp512 and tg128 from reset state, fixed random input IDs, not autoregressive generation",
+  "board": "Arduino Ventuno Q, 16 GB",
+  "cores": [
+    0,
+    3,
+    5,
+    7
+  ],
+  "threads": 4,
+  "cpu_features": "baseline+dotprod+sha2",
+  "optimization": "ReleaseSafe",
+  "zig_version": "0.17.0",
+  "model": {
+    "name": "inclusionAI/Ling-3.0-tiny-GGUF",
+    "revision": "01b850e29ed5b44e2b810160ff980a9bb353296f",
+    "file": "Ling-3.0-tiny-Q4_K_M.gguf",
+    "size_bytes": 4823894944,
+    "sha256": "246d67d45f5b0c7447ca0ce0bdb8b46b8a47b593c5068635dc16422c051d7be9"
+  },
+  "measured_binary_sha256": "60d4d43d81cff27c58fcc0b59e17b36f980c6278fb483f6338eb016c7df57d1e",
+  "protocol": {
+    "mode": "opt-in approximate CPU fast mode, cache v5, no HTP",
+    "warmup_repeat": 0,
+    "measured_repeats": [
+      1,
+      2,
+      3
+    ],
+    "prompt_rows_per_chunk": 8,
+    "pp512": "512 fixed random token IDs, prefillChunk with only final logits retained",
+    "tg128": "128 fixed random token IDs fed one row per step, separate state reset",
+    "rng": {
+      "seed": 1,
+      "multiplier": 6364136223846793005,
+      "increment": 1,
+      "token": "((state >> 32) % vocab) after wrapping u64 update"
+    },
+    "external_timing": "monotonic nanoseconds observed between flushed BEGIN/END markers",
+    "opening_excluded": true,
+    "reference_model_resident": true,
+    "reference_server_private_rss_approx_gib": 5.4
+  },
+  "raw_phase_records": [
+    {
+      "phase": "pp512",
+      "repeat": 0,
+      "external_ns": 13433364914,
+      "external_tps": 38.11405431757483,
+      "internal": [
+        "ns=13432999186",
+        "tps=38.115092"
+      ]
+    },
+    {
+      "phase": "pp512",
+      "repeat": 1,
+      "external_ns": 13388551165,
+      "external_tps": 38.24162851455182,
+      "internal": [
+        "ns=13388076062",
+        "tps=38.242986"
+      ]
+    },
+    {
+      "phase": "pp512",
+      "repeat": 2,
+      "external_ns": 13143037462,
+      "external_tps": 38.955987265525756,
+      "internal": [
+        "ns=13141909132",
+        "tps=38.959332"
+      ]
+    },
+    {
+      "phase": "pp512",
+      "repeat": 3,
+      "external_ns": 13435566655,
+      "external_tps": 38.10780841234269,
+      "internal": [
+        "ns=13434622959",
+        "tps=38.110485"
+      ]
+    },
+    {
+      "phase": "tg128",
+      "repeat": 0,
+      "external_ns": 6092744063,
+      "external_tps": 21.00859623782953,
+      "internal": [
+        "ns=6092695730",
+        "tps=21.008763"
+      ]
+    },
+    {
+      "phase": "tg128",
+      "repeat": 1,
+      "external_ns": 5995011290,
+      "external_tps": 21.351085729147975,
+      "internal": [
+        "ns=5994914988",
+        "tps=21.351429"
+      ]
+    },
+    {
+      "phase": "tg128",
+      "repeat": 2,
+      "external_ns": 5929548487,
+      "external_tps": 21.586803831797386,
+      "internal": [
+        "ns=5929582966",
+        "tps=21.586678"
+      ]
+    },
+    {
+      "phase": "tg128",
+      "repeat": 3,
+      "external_ns": 6160882530,
+      "external_tps": 20.77624421123316,
+      "internal": [
+        "ns=6161119612",
+        "tps=20.775445"
+      ]
+    }
+  ],
+  "summary": {
+    "pp512": {
+      "samples": [
+        38.24162851455182,
+        38.955987265525756,
+        38.10780841234269
+      ],
+      "mean": 38.43514139747342,
+      "median": 38.24162851455182,
+      "sd": 0.4560013910496404
+    },
+    "tg128": {
+      "samples": [
+        21.351085729147975,
+        21.586803831797386,
+        20.77624421123316
+      ],
+      "mean": 21.238044590726172,
+      "median": 21.351085729147975,
+      "sd": 0.41693578504858353
+    }
+  },
+  "build": {
+    "target": "aarch64-linux-gnu",
+    "step": "tf-ling-cpu-decode",
+    "flags": [
+      "-Dtarget=aarch64-linux-gnu",
+      "-Dcpu=baseline+dotprod+sha2"
+    ],
+    "harness": "ling_card_bench.zig",
+    "note": "Private measurement harness is compiled by replacing zig/tests/ling_cpu_decode.zig with zig/tests/ling_card_bench.zig as the root module in zig/build/ling_host.zig. Runtime sources stay at the measured commit."
+  },
+  "publication_status": "CPU contribution under review at measurement; not a release or deployed voice-serving measurement."
+}
