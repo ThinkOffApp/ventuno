@@ -10,7 +10,7 @@ board's own CPU and a Raspberry Pi 5. Measured on 2 October 2026.
 |---|---|---|---|
 | Ornith 1.5 9B, Q4_K_M | 9.0 / 2.0 | 10.2 / 4.1 | **220 / 5.7** |
 | Ling 3 tiny, Q4_K_M | 48.7 / 10.2 | **49.2 / 20.1** | 211 / 14.4 |
-| Ling 3 tiny, Q4_K_M, [TensorFold](#ling-3-tiny-on-tensorfold) | – | 38.4 / 21.2 | – |
+| Ling 3 tiny, Q4_K_M, [TensorFold, our fast mode](#ling-3-tiny-on-tensorfold) | – | 38.4 / 21.2 | – |
 | Gemma 4 E2B, QAT Q4_0 | – | 58.8 / 14.2 | **698 / 21.4** |
 | Ornith 35B-A3B, IQ3 | 9.9 / 3.2 | **12.7 / 5.4** | does not fit |
 | Qwen3.6 35B-A3B, Q3_K_S | 8.7 / 3.0 | **9.3 / 4.9** | does not fit |
@@ -30,14 +30,16 @@ Piper speaks it, all locally. Ling runs on [TensorFold](https://github.com/ashha
 engine by Ash ([@ashhart](https://github.com/ashhart)), on the board's ARM CPU. Thank you, Ash, for TensorFold and
 for reviewing our work on it.
 
-- **Speed**, four fast CPU cores, the same file and benchmark shape as the table above: 38.4 tokens a second reading a
-  512-token prompt and 21.2 generating 128 tokens (three runs, 21 November 2026). That generates slightly faster than
-  llama.cpp's CPU build on this board (20.1), and reads prompts more slowly (49.2).
-- **Two modes.** The default mode is exact: every projection matches a scalar reference bit for bit. The speed above is
-  the opt-in fast mode, which uses 8-bit integer dot products and is not bit-exact.
-- **Status.** The ARM CPU decoder is in review as
-  [ashhart/TensorFold#4266](https://github.com/ashhart/TensorFold/pull/4266), not yet in a TensorFold release. Build and run steps are in
-  that PR's recipe, `docs/recipes/ling-3.0-tiny-cpu.md`. Our Metal forward for Ling
+- **Speed in our fast mode**, four fast CPU cores, the same file and benchmark shape as the table above: 38.4 tokens a
+  second reading a 512-token prompt and 21.2 generating 128 tokens (three runs, 21 November 2026). That generates
+  slightly faster than llama.cpp's CPU build on this board (20.1), and reads prompts more slowly (49.2).
+- **Exact and fast.** The exact mode matches a scalar reference bit for bit; on this board it generates about 5.1 tokens
+  a second (four threads, a 37-token prompt, 32 tokens). The fast mode uses 8-bit integer dot products, is not
+  bit-exact and can change output tokens, so TensorFold does not take it; it stays on our own branch, and the speed
+  above is not a TensorFold figure.
+- **Status.** The exact ARM CPU decoder is in review as
+  [ashhart/TensorFold#4266](https://github.com/ashhart/TensorFold/pull/4266), not yet in a TensorFold release. Build and
+  run steps are in that PR's recipe, `docs/recipes/ling-3.0-tiny-cpu.md`. Our Metal forward for Ling
   ([#3919](https://github.com/ashhart/TensorFold/pull/3919)) is merged.
 - **Latency** in the voice demo today is about 10 to 14 seconds from the end of a spoken question to the first spoken
   word; most of it is speech recognition. We are working on it. The voice app itself will be published in this repo.
